@@ -1,4 +1,4 @@
-# VERSION: 1.20
+# VERSION: 1.21
 # AUTHORS: ALAA_BRAHIM, phlexis96
 # LICENSING INFORMATION
 
@@ -64,6 +64,9 @@ class animetosho(object):
             size = result.get("total_size")
             size_str = f"{size} B" if size is not None else "-1"
 
+            pub_date = result.get("timestamp")
+            pub_date = int(pub_date) if pub_date is not None else -1
+
             current_result = {
                 "engine_url": self.url,
                 "link": link,
@@ -72,6 +75,7 @@ class animetosho(object):
                 "seeds": seeds,
                 "leech": leech,
                 "desc_link": result.get("link", ""),
+                "pub_date": pub_date,
             }
 
             prettyPrinter(current_result)
