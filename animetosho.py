@@ -1,4 +1,4 @@
-# VERSION: 1.21
+# VERSION: 1.22
 # AUTHORS: ALAA_BRAHIM, phlexis96
 # LICENSING INFORMATION
 
@@ -22,7 +22,7 @@ from novaprinter import prettyPrinter
 
 
 class animetosho(object):
-    url = "https://animetosho.xyz"
+    url = "https://animetosho.net"
     name = "Anime Tosho"
     supported_categories = {
         "all": "all",
@@ -37,7 +37,7 @@ class animetosho(object):
 
     def search(self, what, cat='all'):
         query = urllib.parse.quote_plus(urllib.parse.unquote_plus(what))
-        url = f"https://feed.animetosho.xyz/json?q={query}"
+        url = f"https://feed.animetosho.net/json?q={query}"
         response = retrieve_url(url)
         if not response:
             return
